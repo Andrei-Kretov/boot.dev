@@ -33,8 +33,8 @@ def main():
         raise RuntimeError("Issue with API response")
     
     #Print
-    if args.action:
-        print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}\nResponse tokens: {response.usage_metadata.candidates_token_count}")
+    if args.verbose:
+        print(f"User prompt: {args.user_prompt}\nPrompt tokens: {response.usage_metadata.prompt_token_count}\nResponse tokens: {response.usage_metadata.candidates_token_count}")
     print("Response:")
     print(response.text)
 
